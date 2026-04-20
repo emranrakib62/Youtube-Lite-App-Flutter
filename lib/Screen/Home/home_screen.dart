@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_liteee/core/constants/app_color.dart';
 import 'package:youtube_liteee/core/constants/app_string.dart';
+import 'package:youtube_liteee/core1/widget/youtube_nav_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -57,6 +58,11 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           _buildSectionHeader(AppStrings.sectionBrowse),
+          YoutubeNavTile(
+            icon: Icons.home,
+            label: AppStrings.navHome,
+            onTap: () {},
+          ),
           _buildSectionHeader(AppStrings.sectionLibrary),
           _buildSectionHeader(AppStrings.sectionMore),
         ],
