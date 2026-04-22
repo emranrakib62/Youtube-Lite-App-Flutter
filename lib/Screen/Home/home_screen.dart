@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_liteee/Screen/youtube/youtube_screen.dart';
 import 'package:youtube_liteee/core/constants/app_color.dart';
 import 'package:youtube_liteee/core/constants/app_string.dart';
+import 'package:youtube_liteee/core/constants/youtube_url.dart';
 import 'package:youtube_liteee/core1/widget/youtube_nav_tile.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +13,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
+
+  void openUrl(String title,String url){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>YoutubeScreen(title: title, url: url)));
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,31 +71,31 @@ class _HomeScreenState extends State<HomeScreen> {
           YoutubeNavTile(
             icon: Icons.home,
             label: AppStrings.navHome,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navHome, YoutubeUrls.home ),
           ),
 
           YoutubeNavTile(
-            icon: Icons.subdirectory_arrow_left,
+            icon: Icons.play_circle_fill,
             label: AppStrings.navShorts,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navShorts, YoutubeUrls.shorts ),
           ),
 
           YoutubeNavTile(
             icon: Icons.subscriptions,
             label: AppStrings.navSubscriptions,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navSubscriptions, YoutubeUrls.subscriptions ),
           ),
 
           YoutubeNavTile(
             icon: Icons.explore,
             label: AppStrings.navExplore,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navExplore, YoutubeUrls.explore ),
           ),
 
           YoutubeNavTile(
             icon: Icons.trending_neutral,
             label: AppStrings.navTrending,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navTrending, YoutubeUrls.trending ),
           ),
 
 
@@ -94,32 +104,32 @@ class _HomeScreenState extends State<HomeScreen> {
           YoutubeNavTile(
             icon: Icons.history,
             label: AppStrings.navHistory,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navHistory, YoutubeUrls.history ),
           ),
 
           YoutubeNavTile(
             icon: Icons.watch_later,
             label: AppStrings.navWatchLater,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navWatchLater, YoutubeUrls.watchLater ),
           ),
 
           YoutubeNavTile(
             icon: Icons.home,
             label: AppStrings.navLikedVideos,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navLikedVideos, YoutubeUrls.likedVideos ),
           ),
 
           _buildSectionHeader(AppStrings.sectionMore),
           YoutubeNavTile(
             icon: Icons.settings,
             label: AppStrings.navSettings,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navSettings, YoutubeUrls.settings ),
           ),
 
           YoutubeNavTile(
             icon: Icons.help,
             label: AppStrings.navHelp,
-            onTap: () {},
+            onTap: () => openUrl(AppStrings.navHelp, YoutubeUrls.help ),
           ),
 
 
