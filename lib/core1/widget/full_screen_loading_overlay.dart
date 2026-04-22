@@ -1,18 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_liteee/core/constants/app_color.dart';
-class fullScreenLoadingOverlay extends StatelessWidget {
-  const fullScreenLoadingOverlay({super.key});
+
+import '../../core/constants/app_color.dart';
+
+
+
+class FullScreenLoadingOverlay extends StatelessWidget {
+  const FullScreenLoadingOverlay({
+    super.key,
+    required this.isLoading,
+    required this.child,
+    this.loadingWidget,
+  });
+
+  final bool isLoading;
+  final Widget child;
+  final Widget? loadingWidget;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          height: double.infinity,
-          width: double.infinity,
-          color: AppColors.surfaceDark,
-          child: Center(child: CircularProgressIndicator(),),
-        )
+        child,
+        if (isLoading)
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            color: AppColors.surfaceDark,
+            child: Center(child: loadingWidget ?? CircularProgressIndicator()),
+          ),
       ],
     );
   }
