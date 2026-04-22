@@ -17,22 +17,25 @@ class YoutubeNavTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Row(
-        children: [
-          Icon(icon, color: Colors.white),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Text(
-              label,
-              style: const TextStyle(
-                color: AppColors.textHint,
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
+        child: Row(
+          children: [
+            Icon(icon, color: Colors.white),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: AppColors.textHint,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
-          ),
-          const Icon(Icons.chevron_right_rounded, color: Colors.white),
-        ],
+            const Icon(Icons.chevron_right_rounded, color: Colors.white),
+          ],
+        ),
       ),
     );
   }

@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           YoutubeNavTile(
-            icon: Icons.play_circle_fill,
+            icon: Icons.slideshow,
             label: AppStrings.navShorts,
             onTap: () => openUrl(AppStrings.navShorts, YoutubeUrls.shorts ),
           ),
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           YoutubeNavTile(
-            icon: Icons.trending_neutral,
+            icon: Icons.trending_up,
             label: AppStrings.navTrending,
             onTap: () => openUrl(AppStrings.navTrending, YoutubeUrls.trending ),
           ),
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           YoutubeNavTile(
-            icon: Icons.home,
+            icon: Icons.thumb_up,
             label: AppStrings.navLikedVideos,
             onTap: () => openUrl(AppStrings.navLikedVideos, YoutubeUrls.likedVideos ),
           ),
@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // SECTION HEADER WIDGET
   Widget _buildSectionHeader(String title) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.only(left: 15,top: 15,bottom: 15),
       child: Text(
         title,
         style: TextStyle(
