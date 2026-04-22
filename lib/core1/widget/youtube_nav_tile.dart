@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_liteee/core/constants/app_color.dart';
 
 class YoutubeNavTile extends StatelessWidget {
   const YoutubeNavTile({
@@ -14,6 +15,25 @@ class YoutubeNavTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Row(children: [Icon(icon,color:Colors.white)]);
+    return InkWell(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.white),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Text(
+              label,
+              style: const TextStyle(
+                color: AppColors.textHint,
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
+          const Icon(Icons.chevron_right_rounded, color: Colors.white),
+        ],
+      ),
+    );
   }
 }

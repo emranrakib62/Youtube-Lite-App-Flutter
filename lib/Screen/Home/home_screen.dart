@@ -63,8 +63,66 @@ class _HomeScreenState extends State<HomeScreen> {
             label: AppStrings.navHome,
             onTap: () {},
           ),
+
+          YoutubeNavTile(
+            icon: Icons.subdirectory_arrow_left,
+            label: AppStrings.navShorts,
+            onTap: () {},
+          ),
+
+          YoutubeNavTile(
+            icon: Icons.subscriptions,
+            label: AppStrings.navSubscriptions,
+            onTap: () {},
+          ),
+
+          YoutubeNavTile(
+            icon: Icons.explore,
+            label: AppStrings.navExplore,
+            onTap: () {},
+          ),
+
+          YoutubeNavTile(
+            icon: Icons.trending_neutral,
+            label: AppStrings.navTrending,
+            onTap: () {},
+          ),
+
+
           _buildSectionHeader(AppStrings.sectionLibrary),
+
+          YoutubeNavTile(
+            icon: Icons.history,
+            label: AppStrings.navHistory,
+            onTap: () {},
+          ),
+
+          YoutubeNavTile(
+            icon: Icons.watch_later,
+            label: AppStrings.navWatchLater,
+            onTap: () {},
+          ),
+
+          YoutubeNavTile(
+            icon: Icons.home,
+            label: AppStrings.navLikedVideos,
+            onTap: () {},
+          ),
+
           _buildSectionHeader(AppStrings.sectionMore),
+          YoutubeNavTile(
+            icon: Icons.settings,
+            label: AppStrings.navSettings,
+            onTap: () {},
+          ),
+
+          YoutubeNavTile(
+            icon: Icons.help,
+            label: AppStrings.navHelp,
+            onTap: () {},
+          ),
+
+
         ],
       ),
     );
