@@ -29,22 +29,22 @@ class _WebviewWrapperState extends State<WebviewWrapper> {
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (int progress) {
-            // Update loading bar.
-          },
-          onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
-          onHttpError: (HttpResponseError error) {},
-          onWebResourceError: (WebResourceError error) {},
-          onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              return NavigationDecision.prevent;
-            }
-            return NavigationDecision.navigate;
+          onProgress: (progress) => _isLoading.value,
+          onPageFinished: (String url) {
+            _isLoading.value = false;
+            //             _controller.runJavaScript('''
+            // var navBar =  document.querySelector('ytm-pivot-bar-renderer');
+            // if(navbar) navBar.style.display = 'none';
+
+            // ''');
+            _controller.runJavaScript('''
+                        var navBar = document.querySelector('ytm-mobile-topbar-renderer');
+                        if (navBar) navBar.style.display = 'none';
+                      ''');
           },
         ),
       )
-      ..loadRequest(Uri.parse('https://flutter.dev'));
+      ..loadRequest(Uri.parse('https://www.youtube.com/'));
   }
 
   @override

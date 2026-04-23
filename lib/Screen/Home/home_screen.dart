@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void openUrl(String title,String url){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>YoutubeScreen(title: title, url: url)));
-    
+
   }
 
   @override

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../core/constants/app_color.dart';
 
 
-
 class FullScreenLoadingOverlay extends StatelessWidget {
   const FullScreenLoadingOverlay({
     super.key,
@@ -26,7 +25,9 @@ class FullScreenLoadingOverlay extends StatelessWidget {
             height: double.infinity,
             width: double.infinity,
             color: AppColors.surfaceDark,
-            child: Center(child: loadingWidget ?? CircularProgressIndicator()),
+            child: Center(
+              child: loadingWidget ?? const CircularProgressIndicator(),
+            ),
           ),
       ],
     );
