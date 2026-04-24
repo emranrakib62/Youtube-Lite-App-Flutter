@@ -33,11 +33,11 @@ class _WebviewWrapperState extends State<WebviewWrapper> {
           onProgress: (progress) => _isLoading.value,
           onPageFinished: (String url) {
             _isLoading.value = false;
-            //             _controller.runJavaScript('''
-            // var navBar =  document.querySelector('ytm-pivot-bar-renderer');
-            // if(navbar) navBar.style.display = 'none';
+                       _controller.runJavaScript('''
+             var navBar =  document.querySelector('ytm-pivot-bar-renderer');
+            if(navbar) navBar.style.display = 'none';
 
-            // ''');
+             ''');
             _controller.runJavaScript('''
                         var navBar = document.querySelector('ytm-mobile-topbar-renderer');
                         if (navBar) navBar.style.display = 'none';
@@ -56,11 +56,14 @@ class _WebviewWrapperState extends State<WebviewWrapper> {
         return FullScreenLoadingOverlay(
           isLoading: isLoading,
           child: Scaffold(
-            appBar: AppBar(
-              backgroundColor: AppColors.backgroundDark,
-              leading: IconButton(
-                onPressed: () => Navigator.pop(context),
-                icon: const Icon(Icons.arrow_back),
+            appBar: PreferredSize(
+              preferredSize: const Size.fromHeight(35.0),
+              child: AppBar(
+                backgroundColor: const Color(0xFFF5F5F5),
+                leading: IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.arrow_back),
+                ),
               ),
             ),
             body: WebViewWidget(controller: _controller),
