@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:youtube_liteee/core/constants/app_color.dart';
 
 import 'full_screen_loading_overlay.dart';
 
@@ -56,7 +57,7 @@ class _WebviewWrapperState extends State<WebviewWrapper> {
           isLoading: isLoading,
           child: Scaffold(
             appBar: AppBar(
-              title: Text(widget.title),
+              backgroundColor: AppColors.backgroundDark,
               leading: IconButton(
                 onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.arrow_back),

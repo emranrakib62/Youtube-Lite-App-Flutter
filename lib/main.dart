@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'YouTube Lite',
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       home: const HomeScreen(),
     );
   }
