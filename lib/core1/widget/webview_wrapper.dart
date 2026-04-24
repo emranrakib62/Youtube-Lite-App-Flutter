@@ -56,14 +56,19 @@ class _WebviewWrapperState extends State<WebviewWrapper> {
         return FullScreenLoadingOverlay(
           isLoading: isLoading,
           child: Scaffold(
-            appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(35.0),
-              child: AppBar(
-                backgroundColor: const Color(0xFFF5F5F5),
-                leading: IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.arrow_back),
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                widget.title,
+                style: TextStyle(
+                  color: Colors.white,
+                    fontWeight: FontWeight.bold
                 ),
+              ),
+              backgroundColor: AppColors.backgroundDark,
+              leading: IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: const Icon(Icons.arrow_back,color: Colors.white,),
               ),
             ),
             body: WebViewWidget(controller: _controller),
